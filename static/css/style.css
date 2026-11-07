@@ -1,0 +1,112 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #10111b;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #191a2b;
+    padding: 30px;
+    text-align: center;
+    border-bottom: 2px solid #9333ea;
+}
+
+header h1 {
+    color: #a855f7;
+    font-size: 35px;
+}
+
+header p {
+    margin-top: 10px;
+    color: #bbbbcc;
+}
+
+main {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+main h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+main p {
+    color: #bbbbcc;
+}
+
+.produtos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card {
+    background: #191a2b;
+    border: 1px solid #9333ea;
+    border-radius: 12px;
+    padding: 25px;
+    width: 280px;
+    text-align: center;
+}
+
+.card h3 {
+    color: #a855f7;
+    margin-bottom: 15px;
+}
+
+.card p {
+    margin-bottom: 20px;
+}
+
+.card span {
+    display: block;
+    font-size: 22px;
+    color: #22c55e;
+    margin-bottom: 20px;
+}
+
+.card button {
+    background: #9333ea;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background: #7e22ce;
+}
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    margin: 25px auto;
+}
+
+.formulario input {
+    padding: 12px;
+    border-radius: 8px;
+    background: #191a2b;
+    color: white;
+    border: 1px solid purple;
+}
+
+.formulario button {
+    padding: 12px;
+    background: purple;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

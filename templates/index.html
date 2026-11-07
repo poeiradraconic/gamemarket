@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameMarket</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>🎮 GameMarket</h1>
+        <p>Seu universo gamer começa aqui!</p>
+    </header>
+
+    <main>
+        <h2>Bem-vindo ao GameMarket</h2>
+        <p>Explore nossos anúncios demonstrativos de jogos.</p>
+    
+<main>
+    <h2>Explore nossos anúncios</h2>
+    <p>Confira os destaques do GameMarket!</p>
+     <h2>Cadastrar anúncio</h2>
+     <h2>Cadastrar anúncio</h2>
+
+<form action="/adicionar" method="POST" class="formulario">
+
+    <input type="text" name="nome" placeholder="Nome" required>
+
+    <input type="text" name="descricao" placeholder="Descrição" required>
+
+    <input type="number" name="preco" placeholder="Preço" step="0.01" required>
+
+    <button type="submit">Cadastrar</button>
+
+</form>
+
+
+<section class="produtos">
+
+    {% for produto in produtos %}
+
+ <div class="card">
+
+    <h3>{{ produto.nome }}</h3>
+    <p>{{ produto.descricao }}</p>
+    <span>R$ {{ "%.2f"|format(produto.preco) }}</span>
+
+    <form action="/editar/{{ produto.id }}" method="POST">
+
+        <input type="text" name="nome"
+               value="{{ produto.nome }}" required>
+
+        <input type="text" name="descricao"
+               value="{{ produto.descricao }}" required>
+
+        <input type="number" name="preco"
+               value="{{ produto.preco }}" step="0.01" min="0" required>
+
+        <button type="submit">Salvar alterações</button>
+
+    </form>
+
+    <form action="/excluir/{{ produto.id }}" method="POST">
+        <button type="submit">Excluir anúncio</button>
+    </form>
+
+</div>
+
+    {% else %}
+
+    <p>Nenhum anúncio cadastrado ainda.</p>
+
+    {% endfor %}
+
+</section>
+
+</main>
+
+
+</body>
+</html>
